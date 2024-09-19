@@ -7,20 +7,17 @@ const socialLinks = [
     link: "mailto:kenneth.cringe@gmail.com",
   },
   {
-    name: "facebook",
-    link: "https://www.facebook.com/rougekiing",
+    name: "linkedin",
+    link: "https://ng.linkedin.com/in/kenneth-nkwocha",
   },
   {
     name: "twitter",
     link: "https://www.twitter.com/kennethdera",
   },
+ 
   {
-    name: "instagram",
-    link: "https://www.instagram.com/kenneth",
-  },
-  {
-    name: "youtube",
-    link: "https://www.youtube.com/ken",
+    name: "github",
+    link: "https://www.github.com/kennethdera",
   },
 ];
 
@@ -47,36 +44,43 @@ const testimonials = [
 const projects = [
   {
     id: "001",
-    image: "./imgs/folio-2.jpg",
+    image: "./imgs/project-1.jpg",
     title: "Old School Party",
     subtitle: "Online Ticket Sale",
-    link: "https://web.whatsapp.com",
-    info: "This was a website where users buy different packages of tickets for an event. The App was created in React JS,React Hooks.Paystack was used as the payment integration, app was hosted on Netlify",
+    link: "https://old-school-party.vercel.app/",
+    info: "This was a website where users buy different packages of tickets for an event. The App was created in React JS,React Hooks.Paystack was used as the payment integration, app was hosted on Vercel. NB: Sensitive information has been replaced",
   },
-  {
-    id: "002",
-    image: "./imgs/folio-1.jpg",
-    title: "Errander",
-    subtitle: "Indipendent Services",
-    link: "https://web.whatsapp.com",
-    info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet nesciunt qui sit velit delectus voluptates, repellat ipsum culpa id deleniti. Rerum debitis facilis accusantium neque numquam mollitia modi quasi distinctio.",
-  },
+ 
 ];
 
 const services = [
   {
     id: "001",
     image: "./imgs/pencil-case.svg",
-    title: "Logo Design",
+    title: "Graphics and Branding",
     subtext:
-      "Labore velit culpa adipisci excepturi consequuntur itaque in nam molestias dolorem iste quod.",
+      "Logo, icons, brochures, brand guidelines",
   },
   {
     id: "002",
     image: "./imgs/responsive.svg",
-    title: "Logo Design",
+    title: "Web Design and Development",
     subtext:
-      "Labore velit culpa adipisci excepturi consequuntur itaque in nam molestias dolorem iste quod.",
+      "Responsive websites, e-commerce, Django & ReactJS",
+  },
+  {
+    id: "003",
+    image: "./imgs/startup.svg",
+    title: "App Scripting and Automation",
+    subtext:
+      "Workflow Optimization, cutom scripts",
+  },
+  {
+    id: "004",
+    image: "./imgs/responsive.svg",
+    title: "Architectural CADD",
+    subtext:
+      "2D/3D design, drafting, building & interior plans",
   },
 ];
 
@@ -94,7 +98,7 @@ function App() {
       <Contact modal={modal} toggleModal={toggleModal} />
       {!modal || <ContactForm />}
       {/*Is this even neccessary*/}
-      {testimonials && <Testimonial />}
+      {/* {testimonials && <Testimonial />} */}
     </>
   );
 }
@@ -110,7 +114,7 @@ function Header() {
         </h1>
         <p className="header-subtitle">WEB DESIGNER/DEVELOPER</p>
 
-        <a href="#blog" className="btn btn-primary">
+        <a href="#portfolio" className="btn btn-primary">
           Visit My Works
         </a>
       </div>
@@ -201,7 +205,7 @@ function Services() {
 
 function Projects() {
   return (
-    <section className="section" id="blog">
+    <section className="section" id="portfolio">
       {/*container */}
       <div className="container text-center">
         <p className="section-subtitle">Projects I have worked on</p>
@@ -294,7 +298,7 @@ function ContactForm() {
   return (
     <section className="section show fade" id="contact">
       <div className="container text-center">
-        <p className="section-subtitle">How can you communicate?</p>
+        <p className="section-subtitle">How can we communicate?</p>
         <h6 className="section-title mb-5">Contact Me</h6>
         {/* contact form */}
         <form
@@ -357,10 +361,11 @@ function Testimonial() {
         <p className="section-subtitle">
           What Think Client About Me ?
         </p>
-        <h6 className="section-title mb-6">Testmonial</h6>
+        <h6 className="section-title mb-6">Testmonials</h6>
 
         {/* row */}
         <div className="row">
+          
           {testimonials.map((testimonial) => (
             <div className="col-md-6" key={testimonial.id}>
               <div className="testimonial-card">
@@ -383,7 +388,7 @@ function Testimonial() {
             </div>
           ))}
         </div>
-      </div>{" "}
+      </div>
       {/* end of container */}
     </section>
   );
